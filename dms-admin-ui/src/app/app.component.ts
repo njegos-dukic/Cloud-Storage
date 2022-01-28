@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'dms-admin-ui';
+  title = 'DMS Admin';
+  date: Date = new Date();
+
+  constructor(private router: Router) { }
+
+  goToPage(pageName: string){
+    this.router.navigate([`${pageName}`]);
+  }
 }
