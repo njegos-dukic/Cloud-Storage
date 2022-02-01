@@ -4,9 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DmsAdminApiApplication {
+public class DmsDocumentsApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DmsAdminApiApplication.class, args);
+        SpringApplication.run(DmsDocumentsApiApplication.class, args);
     }
+
 }

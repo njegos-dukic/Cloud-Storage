@@ -8,11 +8,11 @@
         <version>2.6.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>org.unibl.etf.sni</groupId>
-    <artifactId>dms-admin-api</artifactId>
+    <groupId>org.unibl.etf</groupId>
+    <artifactId>dms-documents-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dms-admin-api</name>
-    <description>dms-admin-api</description>
+    <name>dms-documents-api</name>
+    <description>dms-documents-api</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -51,7 +51,6 @@
             <artifactId>keycloak-spring-boot-starter</artifactId>
             <version>16.1.1</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
@@ -61,19 +60,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.keycloak.bom</groupId>
-                <artifactId>keycloak-adapter-bom</artifactId>
-                <version>13.0.1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    </dependencies>
 
     <build>
         <plugins>

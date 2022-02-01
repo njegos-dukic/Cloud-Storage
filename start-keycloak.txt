@@ -1,0 +1,1 @@
+C:/"Program Files"/Java/keycloak-16.1.1/bin/standalone.bat -Djboss.socket.binding.port-offset=100
