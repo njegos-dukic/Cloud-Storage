@@ -1,0 +1,19 @@
+<main class="form-signin">
+    <form data-bitwarden-watching="1">
+      <h1 class="h3 mb-3 fw-normal">Please log in</h1>
+      <hr>
+      <div class="form-floating">
+        <input type="text" required [(ngModel)]="username" [ngModelOptions]="{standalone: true}" class="form-control" id="floatingUsername" placeholder="Username">
+        <label for="floatingUsername">Username</label>
+      </div>
+      <hr>
+      <div class="form-floating">
+        <input type="password" required [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <hr>
+      <p style="color: red;">{{ error }}</p>
+      <hr>
+      <button class="w-100 btn btn-lg btn-primary" (click)="login(username, password)" type="submit">Sign in</button>
+    </form>
+</main>

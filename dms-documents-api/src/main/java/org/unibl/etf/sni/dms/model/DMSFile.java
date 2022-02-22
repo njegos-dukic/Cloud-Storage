@@ -2,16 +2,15 @@ package org.unibl.etf.sni.dms.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.File;
-
-@Getter
 @Setter
+@Getter
+@NoArgsConstructor
 @AllArgsConstructor
-public class DetailedFile {
+public class DMSFile {
 
-    private File parent;
-    private File file;
-    private String type;
+    private String name;
+    private byte[] content;
 }

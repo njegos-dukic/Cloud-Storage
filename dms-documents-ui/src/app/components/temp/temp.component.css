@@ -1,0 +1,14 @@
+p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.hover-lighter:hover {
+    background-color: #424242;
+    border-radius: 5px;
+}
+
+.lighter-gray {
+    background-color: #424242;
+    border-radius: 5px;
+}

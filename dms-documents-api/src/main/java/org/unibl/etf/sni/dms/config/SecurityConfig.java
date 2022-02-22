@@ -15,9 +15,9 @@ import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 
-@Configuration
-@EnableWebSecurity
-@ComponentScan(basePackageClasses = KeycloakSecurityComponents.class)
+ @Configuration
+ @EnableWebSecurity
+ @ComponentScan(basePackageClasses = KeycloakSecurityComponents.class)
 class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter
 {
     /**
@@ -48,6 +48,7 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter
             // .anonymous().disable()
             .authorizeRequests()
             .antMatchers("/hello*").hasRole("default-roles-documentmanagementsystem")
+            .antMatchers("/directory*").hasRole("default-roles-documentmanagementsystem")
             .antMatchers("/logout*").hasRole("default-roles-documentmanagementsystem")
             .anyRequest().permitAll();
     }
