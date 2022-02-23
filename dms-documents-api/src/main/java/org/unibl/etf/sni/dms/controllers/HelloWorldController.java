@@ -38,11 +38,10 @@ public class HelloWorldController {
     }
 
     @GetMapping(path = "/logout")
-    private String logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.logout();
-
-        return "<p>Successfully logged out!</p>" +
-                "<hr>" +
-                "<a href=\"http://localhost:9001/hello\">Home</a>";
+        response.sendRedirect("http://localhost:4200/directory");
     }
+
+
 }

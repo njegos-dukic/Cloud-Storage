@@ -4,8 +4,8 @@ export function initializeKeycloak (keycloak: KeycloakService) {
     return () =>
       keycloak.init({
         config: {
-          url: 'http://localhost:8180' + '/auth',
-          realm: 'Document Management System',
+          url: 'http://localhost:8180/auth',
+          realm: 'DocumentManagementSystem',
           clientId: 'dms-ui',
         },
           initOptions: {

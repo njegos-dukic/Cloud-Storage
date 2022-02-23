@@ -1,10 +1,8 @@
 package org.unibl.etf.sni.dms.controllers;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 import org.unibl.etf.sni.dms.model.DMSFolder;
 import org.unibl.etf.sni.dms.services.FileSystemService;
 
@@ -18,5 +16,11 @@ public class FileSystemController {
     @GetMapping
     public DMSFolder getFolderStructure(@RequestParam(required = false) String path) {
         return fileSystemService.populate(path);
+    }
+
+    @PostMapping
+    public boolean delete(@RequestBody(required = true) @Validated String path) {
+        System.out.println("Accepted: " + path);
+        return fileSystemService.delete(path);
     }
 }
