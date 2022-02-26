@@ -1,0 +1,18 @@
+
+
+GET USER ID: GET http://localhost:8180/auth/admin/realms/DocumentManagementSystem/users
+
+DELETE USER: DELETE http://localhost:8180/auth/admin/realms/DocumentManagementSystem/users/{USER_ID}
+
+PUT http://localhost:8180/auth/admin/realms/DocumentManagementSystem/users/{id}
+
+{
+    "attributes": {
+        "DOB": "1984-07-01"
+    }
+}
+
+curl -d "client_id=admin-cli" -d "username=njego" -d "password=amazing284," -d "grant_type=password" http://localhost/8180/auth/realms/master/protocol/openid-connect/token
+
+
+Bearer {TOKEN}

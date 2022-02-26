@@ -8,6 +8,8 @@ import { TempComponent } from './components/temp/temp.component';
 import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { initializeKeycloak } from './init/keycloak-init.factory';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    FormsModule,
+    NgbModule
   ],
   providers: [
     {

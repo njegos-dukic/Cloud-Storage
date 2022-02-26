@@ -45,11 +45,9 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter
         super.configure(http);
         http
             .csrf().disable()
-            // .anonymous().disable()
             .authorizeRequests()
             .antMatchers("/hello*").hasRole("default-roles-documentmanagementsystem")
             .antMatchers("/directory*").hasRole("default-roles-documentmanagementsystem")
-            .antMatchers("/logout*").hasRole("default-roles-documentmanagementsystem")
-            .anyRequest().permitAll();
+            .antMatchers("/logout*").hasRole("default-roles-documentmanagementsystem");
     }
 }

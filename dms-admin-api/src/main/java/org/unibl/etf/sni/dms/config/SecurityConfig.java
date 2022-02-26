@@ -44,11 +44,11 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter
     {
         super.configure(http);
         http
-            .csrf().and()
-            .anonymous().disable()
+            .csrf().disable()
+            // .anonymous().disable()
             .authorizeRequests()
-            // .antMatchers("/hello*").hasRole("default-roles-documentmanagementsystem")
-            // .antMatchers("/logout*").hasRole("default-roles-documentmanagementsystem")
-            .anyRequest().hasRole("default-roles-documentmanagementsystem");
+            .antMatchers("/hello*").hasRole("dms-admin")
+            .antMatchers("/logout*").hasRole("default-roles-documentmanagementsystem")
+            .antMatchers("/logs*").hasRole("dms-admin");
     }
 }

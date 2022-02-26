@@ -1,4 +1,4 @@
-package org.unibl.etf.sni.dms.model;
+package org.unibl.etf.sni.dms.model.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

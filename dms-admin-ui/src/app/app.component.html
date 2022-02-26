@@ -1,3 +1,4 @@
+<!-- HEADER -->
 <header class="p-3 bg-dark text-white">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -9,22 +10,58 @@
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="/users" class="nav-link px-2 text-secondary">Users</a></li>
+        <li>&nbsp;&nbsp;Logs</li>
       </ul>
 
       <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2" (click)="goToPage('login')">Login</button>
-        <button type="button" class="btn btn-outline-light me-2">Documents</button>
-        <button type="button" class="btn btn-warning">Log out</button>
+        <a href="http://localhost:4200" target="_blank">
+        <button type="button" class="btn btn-outline-light me-2">
+          Storage
+        </button>
+        </a>
+        <button (click)="logOut()" type="button" class="btn btn-warning">Log out</button>
       </div>
     </div>
   </div>
 </header>
-
+<!-- BODY -->
 <div class="container">
-  <router-outlet></router-outlet>            
-</div>
+  <div class="list-group" *ngIf="error != ''">
+    <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+                <h6><b> {{ error }} </b></h6>
+            </div>
+        </div>
+    </a>   
+  </div>
 
+  <ng-container >
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" *ngIf="logs.length < 1 && noLogs != ''">
+            <div class="d-flex gap-2 w-100 justify-content-between" >
+                <div>
+                    <h6><b> {{ noLogs }} </b></h6>
+                </div>
+            </div>
+        </a>
+
+        <div class="list-group" *ngFor="let log of logs">
+            <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                        <h6 class="mb-0"><b>{{ log.dateTime.getDate() }}-{{ log.dateTime.getMonth() }}-{{ log.dateTime.getFullYear() }} {{ log.dateTime.getHours() }}:{{ log.dateTime.getMinutes() }}:{{ log.dateTime.getSeconds() }} [{{ log.type }}]</b></h6>
+                        <hr>
+                        <p class="mb-0 opacity-55">{{ log.info }}</p>
+                        <hr>
+                    </div>
+                </div>
+        </a>
+        </div>
+    </div>
+</ng-container>          
+</div>
+<!-- FOOTER -->
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center justify-content-center justify-content-lg-start">
