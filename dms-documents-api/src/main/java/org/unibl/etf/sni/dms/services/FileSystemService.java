@@ -23,8 +23,8 @@ import java.util.Set;
 @AllArgsConstructor
 public class FileSystemService {
 
-    private static final String DMS_ADMIN_ROOT = "C:\\Users\\njego\\Desktop\\sni-projektni-zadatak\\";
-    private static final String DMS_FS_ROOT = "C:\\Users\\njego\\Desktop\\sni-projektni-zadatak\\dms-fs-root\\";
+    private static final String DMS_ADMIN_ROOT = ".\\..\\";
+    private static final String DMS_FS_ROOT = ".\\..\\dms-fs-root\\";
     private static final String DMS_ADMIN_ROLE = "dms-admin";
 
     public DMSFolder populate(String path, AccessToken accessToken) {
