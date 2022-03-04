@@ -7,4 +7,4 @@
 
 - Project used as an example project for other students. :)
 
-- Presentational video in ./pisio-projekat.pptx
+- Presentational video in ***pisio-projekat.pptx***
