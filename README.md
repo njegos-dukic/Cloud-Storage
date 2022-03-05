@@ -1,7 +1,6 @@
 # Cloud Storage
 
 - Presentational video in ***pisio-projekat.pptx***
-- Project used as an example project for other students. 🙂
 
 ### Core tools
 - Spring Boot + Spring Security + Angular.
